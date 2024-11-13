@@ -1,0 +1,159 @@
+/* General Reset */
+body, h1, h2, p, ul, li, a, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #f4a261;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+header .logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Hero Section */
+#hero {
+    background: linear-gradient(135deg, #e76f51, #f4a261);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero-heading {
+    font-size: 3em;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: glow 3s infinite;
+}
+
+.hero-subtext {
+    font-size: 1.2em;
+    margin: 20px 0;
+}
+
+.cta-button {
+    background-color: #2a9d8f;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1em;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    animation: bounce 2s infinite;
+}
+
+.cta-button:hover {
+    background-color: #264653;
+}
+
+/* Products Section */
+#products {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(45deg, #f4a261, #2a9d8f, #e76f51);
+    background-size: 200% 200%;
+    animation: gradient-shift 5s infinite;
+    color: white;
+}
+
+.animated-text {
+    font-size: 3em;
+    font-weight: bold;
+    text-transform: uppercase;
+    animation: glow 2s infinite, bounce 1.5s infinite;
+}
+
+/* About Section */
+#about {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+/* Contact Section */
+.contact {
+    padding: 50px 20px;
+    background-color: #264653;
+    color: white;
+    text-align: center;
+}
+
+.contact a {
+    color: #f4a261;
+    text-decoration: none;
+}
+
+.social-media a img {
+    width: 40px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.social-media a:hover img {
+    transform: scale(1.2);
+}
+
+/* Footer */
+footer {
+    background-color: #2a9d8f;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Animations */
+@keyframes gradient-shift {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes glow {
+    0%, 100% {
+        text-shadow: 0 0 10px white, 0 0 20px #f4a261, 0 0 30px #e76f51;
+    }
+    50% {
+        text-shadow: 0 0 20px white, 0 0 30px #2a9d8f, 0 0 40px #f4a261;
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
