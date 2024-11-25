@@ -1,159 +1,218 @@
-/* General Reset */
-body, h1, h2, p, ul, li, a, button {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+:root {
+	/* ### Primary */
+	--Desaturated-Red: hsl(0, 36%, 70%);
+	--Soft-Red: hsl(0, 93%, 68%);
+
+	/* ### Neutral */
+	--Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+	/* ### Gradients */
+	/* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) */
+	/* - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+	--Font-size: 16px;
+	--Family: "Josefin Sans", sans-serif;
+	/* - Weights: 300, 400, 600 */
 }
 
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: var(--Family);
+}
+
+html {
+	overflow-x: hidden;
+	font-size: var(--Font-size);
+	min-height: 100vh;
+	width: 100vw;
+	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	background-attachment: fixed;
+}
 body {
-    color: #333;
+	overflow-x: hidden;
+	font-size: var(--Font-size);
+	min-height: 100vh;
+	width: 118vw;
+	background: url(./images/Scarf.png) right top no-repeat;
+	background-size: contain;
 }
 
-/* Header */
-header {
-    background-color: #f4a261;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    color: white;
+.container {
+	background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	background-attachment: fixed;
+}
+
+img {
+	max-width: 100%;
 }
 
 header .logo {
-    font-size: 1.8em;
-    font-weight: bold;
+	width: 7rem;
+	margin: 2rem 0 2rem 2rem;
 }
 
-header nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
+.hero img {
+	width: 100%;
 }
 
-header nav ul li a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
+main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
-/* Hero Section */
-#hero {
-    background: linear-gradient(135deg, #e76f51, #f4a261);
-    color: white;
-    text-align: center;
-    padding: 100px 20px;
+main h1 {
+	font-size: 3rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	color: var(--Dark-Grayish-Red);
+	letter-spacing: 0.6rem;
+	line-height: 1.05;
+	text-align: center;
+	margin: 2.5rem 0 1rem 0;
 }
 
-.hero-heading {
-    font-size: 3em;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-    animation: glow 3s infinite;
+main h1 span {
+	font-weight: 300;
+	color: var(--Desaturated-Red);
 }
 
-.hero-subtext {
-    font-size: 1.2em;
-    margin: 20px 0;
+main .lead {
+	margin: 0rem 2.3rem 2.3rem 2.3rem;
+	font-size: 1rem;
+	font-weight: 400;
+	line-height: 1.5;
+	text-align: center;
+	color: var(--Desaturated-Red);
 }
 
-.cta-button {
-    background-color: #2a9d8f;
-    color: white;
-    padding: 15px 30px;
-    font-size: 1em;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    animation: bounce 2s infinite;
+form {
+	position: relative;
+	width: 80%;
+	margin: 2rem auto;
+}
+.wrapper {
+	padding: 0 0 5rem 0;
+}
+input[type="text"] {
+	width: 100%;
+	background: transparent;
+	border-radius: 10000px;
+	height: 3rem;
+	padding-left: 1.5rem;
+	font-size: 1rem;
+	outline: none;
+	border: 0.09rem solid var(--Desaturated-Red);
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	transition: all 0.1s ease;
 }
 
-.cta-button:hover {
-    background-color: #264653;
+input[type="text"].error {
+	border: 0.11rem solid var(--Soft-Red);
 }
 
-/* Products Section */
-#products {
-    text-align: center;
-    padding: 100px 20px;
-    background: linear-gradient(45deg, #f4a261, #2a9d8f, #e76f51);
-    background-size: 200% 200%;
-    animation: gradient-shift 5s infinite;
-    color: white;
+::placeholder {
+	color: var(--Desaturated-Red);
 }
 
-.animated-text {
-    font-size: 3em;
-    font-weight: bold;
-    text-transform: uppercase;
-    animation: glow 2s infinite, bounce 1.5s infinite;
+form div {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
 }
 
-/* About Section */
-#about {
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-    text-align: center;
+form div #error-icon {
+	width: 1.2rem;
+	margin-right: 0.5rem;
+	margin: auto 0.5rem auto 0;
+	user-select: none;
+	opacity: 0;
+	transition: all 0.1s ease;
 }
 
-/* Contact Section */
-.contact {
-    padding: 50px 20px;
-    background-color: #264653;
-    color: white;
-    text-align: center;
+form div #error-icon.error {
+	opacity: 1;
 }
 
-.contact a {
-    color: #f4a261;
-    text-decoration: none;
+form div button {
+	display: inline-block;
+	border-radius: 10000px;
+	height: 3rem;
+	background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+	padding: 0 2rem;
+	outline: none;
+	border: none;
+	cursor: pointer;
+	user-select: none;
+	transition: all 0.1s ease;
 }
 
-.social-media a img {
-    width: 40px;
-    margin: 0 10px;
-    transition: transform 0.3s;
+form div button:hover {
+	box-shadow: 0 15px 20px -3px var(--Desaturated-Red);
 }
 
-.social-media a:hover img {
-    transform: scale(1.2);
+#error {
+	position: absolute;
+	left: 1.6rem;
+	top: 3.4rem;
+	color: var(--Soft-Red);
+	opacity: 0;
+	transition: all 0.1s linear;
 }
 
-/* Footer */
-footer {
-    background-color: #2a9d8f;
-    color: white;
-    text-align: center;
-    padding: 15px;
+#error.error {
+	user-select: none;
+	opacity: 1;
 }
 
-/* Animations */
-@keyframes gradient-shift {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
+@media (min-width: 549px) {
+	.hero {
+		display: none;
+	}
 
-@keyframes glow {
-    0%, 100% {
-        text-shadow: 0 0 10px white, 0 0 20px #f4a261, 0 0 30px #e76f51;
-    }
-    50% {
-        text-shadow: 0 0 20px white, 0 0 30px #2a9d8f, 0 0 40px #f4a261;
-    }
-}
+	body {
+		min-height: 100vh;
+	}
 
-@keyframes bounce {
-    0%, 100% {
-        transform: translateY(0);
-    }
-    50% {
-        transform: translateY(-10px);
-    }
+	.container {
+		width: 61%;
+		min-height: 100vh;
+		min-width: 400px;
+		max-width: 850px;
+		background-attachment: fixed;
+		background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+	}
+
+	header .logo {
+		width: 10rem;
+		margin: 2rem 0rem 2rem 8vw;
+	}
+
+	main h1 {
+		text-align: left;
+		margin: 2.5rem 2rem 1rem 8vw;
+	}
+
+	main .lead {
+		width: 65%;
+		margin: 0rem 0rem 2.3rem 8vw;
+		text-align: left;
+	}
+
+	form {
+		width: 65%;
+		margin: 2rem 8vw;
+	}
+
+	form div button {
+		padding: 0 2.7rem;
+	}
 }
